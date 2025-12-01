@@ -5,26 +5,10 @@ date: "2025-11-25"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Introduction
 
-## R Markdown
+### Welcome to my FANR8950 Project! Today we will be walking through a dataset that I collected along the lower Missouri River. This dataset looks at amphibian larvae at different sites and in different wetlands within those sites. 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Our sampling was stratified to include sites where floodplain restoration has occurred, sites where restoration is slated to occur, and sites with no plans for future restoration. Wetlands are classified into categories. The first category describes where the wetland is in relation to the levee. If the levee is located between the wetland and the mainstem river, that is classified as a "landward" wetland. If the wetland has no levee barrier between it and the mainstem river, that is classified as a "riverward" levee.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### We sampled both naturally occuring wetlands and wetlands that are manmade. If a wetland was constructed it is classified as a "borrow pit" wetland. 
