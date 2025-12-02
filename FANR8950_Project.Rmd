@@ -4,11 +4,67 @@ author: "Aurora Fowler"
 date: "2025-11-25"
 output: html_document
 ---
+```{r, libraries, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(stringr)
+library(kableExtra)
+```
 
 # Introduction
 
-### Welcome to my FANR8950 Project! Today we will be walking through a dataset that I collected along the lower Missouri River. This dataset looks at amphibian larvae at different sites and in different wetlands within those sites. 
+##### Welcome to my FANR8950 Project! Today we will be walking through a dataset that I collected along the lower Missouri River. This dataset looks at amphibian larvae at different sites and in different wetlands within those sites. 
 
-### Our sampling was stratified to include sites where floodplain restoration has occurred, sites where restoration is slated to occur, and sites with no plans for future restoration. Wetlands are classified into categories. The first category describes where the wetland is in relation to the levee. If the levee is located between the wetland and the mainstem river, that is classified as a "landward" wetland. If the wetland has no levee barrier between it and the mainstem river, that is classified as a "riverward" levee.
+##### Our sampling was stratified to include sites where floodplain restoration has occurred, sites where restoration is slated to occur, and sites with no plans for future restoration. Wetlands are classified into categories. The first category describes where the wetland is in relation to the levee. If the levee is located between the wetland and the mainstem river, that is classified as a "landward" wetland. If the wetland has no levee barrier between it and the mainstem river, that is classified as a "riverward" levee.
 
-### We sampled both naturally occuring wetlands and wetlands that are manmade. If a wetland was constructed it is classified as a "borrow pit" wetland. 
+##### We sampled both naturally occuring wetlands and wetlands that are manmade. If a wetland was constructed it is classified as a "borrow pit" wetland. The data was collected via dipnet survyes in which the littoral zone of the wetland is sampled with a net slowly sweeping along the substrate. Below we will explore this dataset.
+
+# Data Summary
+
+```{r}
+dipnet_data <- read.csv("C:/Users/ajf66050/Documents/Research/Data/Field Data/Raw Data/Raw Data 9.16.csv")
+```
+
+##### The dataset contains `r ncol(dipnet_data)` variables. A total of `r dplyr::n_distinct(dipnet_data[, c("Site.Name", "Wetland.ID..")])` wetlands were sampled. Within those wetlands, a total of `r dplyr::n_distinct(dipnet_data$Tadpoles.Present)` species were found. Below is a table with additional summary statistics for the dataset.
+
+```{r, numeric summary stats}
+numeric_vars <- c(
+  "Toad_Tadpoles",
+  "Blanchards_Cricket_Frog",
+  "Copes_Gray_Treefrog",
+  "Boreal_Chorus_Frog",
+  "Leopard_Frog",
+  "American_Bullfrog",
+  "Total_Tadpoles"
+)
+
+numeric_summary <- data.frame(
+  Variable = numeric_vars,
+  Mean = unname(sapply(dipnet_data[numeric_vars], function(x) mean(x, na.rm = TRUE))),
+  Min  = unname(sapply(dipnet_data[numeric_vars], function(x) min(x, na.rm = TRUE))),
+  Max  = unname(sapply(dipnet_data[numeric_vars], function(x) max(x, na.rm = TRUE)))
+)
+
+numeric_summary %>%
+  kbl(digits = 2, caption = "Summary Statistics for Tadpole Counts") %>%
+  kable_classic(full_width = TRUE)
+```
+
+```{r, categorical summary stats}
+cat_summary <- dipnet_data %>%
+  distinct(Wetland.ID.., Site.Name, Wetland.Type) %>%
+  group_by(Site.Name, Wetland.Type) %>%
+  summarise(Num_Wetlands = n(), .groups = "drop")
+
+cat_summary <- cat_summary %>%
+  mutate(Wetland.Type = str_replace_all(Wetland.Type, "_|-|,", " "),
+    Wetland.Type = str_squish(Wetland.Type),
+    Wetland.Type = str_replace_all(Wetland.Type, " ", "\n"))
+
+
+cat_summary %>%
+  kbl(caption = "Categorical Variable Summary") %>%
+  kable_classic(full_width = TRUE)
+
+```
