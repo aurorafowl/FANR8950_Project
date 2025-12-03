@@ -18,11 +18,11 @@ library(purrr)
 
 # Introduction
 
-##### Welcome to my FANR8950 Project! Today we will be walking through a dataset that I collected along the lower Missouri River. This dataset looks at amphibian larvae at different sites and in different wetlands within those sites. 
+##### Welcome to my FANR8950 Project! Today we will be walking through a dataset that I collected along the lower Missouri River. This dataset looks at amphibian larvae at different sites and in different wetlands within those sites. The US Army Corps of Engineers are looking for resilient solutions to large-scale flooding events in this area. One of those solutions is called levee setbacks. Levee setbacks physically move the levee further back in the system to allow the natural floodplain to reform. Myself as well as a whole team of people are looking at the biotic response to this form of floodplain restoration.
 
 ##### Our sampling was stratified to include sites where floodplain restoration has occurred, sites where restoration is slated to occur, and sites with no plans for future restoration. Wetlands are classified into categories. The first category describes where the wetland is in relation to the levee. If the levee is located between the wetland and the mainstem river, that is classified as a "landward" wetland. If the wetland has no levee barrier between it and the mainstem river, that is classified as a "riverward" levee.
 
-##### We sampled both naturally occuring wetlands and wetlands that are manmade. If a wetland was constructed it is classified as a "borrow pit" wetland. The data was collected via dipnet survyes in which the littoral zone of the wetland is sampled with a net slowly sweeping along the substrate. Below we will explore this dataset.
+##### We sampled both naturally occuring wetlands and wetlands that are manmade. If a wetland was constructed it is classified as a "borrow pit" wetland. Our final wetland category is wetlands that are connected to agriculture. This region of the world is very ag heavy and often, drainage ditches are used to funnel run off from local fields into wetlands and the main stem river. Wetlands were characterized with the combination of variables that was most descriptive. For example, a wetland could be man-made (borrow pit), on the landward side, and connected to agriculture. The data was collected via dipnet survyes in which the littoral zone of the wetland is sampled with a net slowly sweeping along the substrate. Below we will explore this dataset.
 
 # Data Summary
 
@@ -34,7 +34,7 @@ dipnet_data <- dipnet_data %>%
          Wetland.Type.clean = str_squish(Wetland.Type.clean))
 ```
 
-##### The dataset contains `r ncol(dipnet_data)` variables. A total of `r dplyr::n_distinct(dipnet_data[, c("Site.Name", "Wetland.ID..")])` wetlands were sampled. Within those wetlands, a total of 6 species were found. Below is a table with additional summary statistics for the dataset.
+##### The dataset contains `r ncol(dipnet_data)` variables. A total of `r dplyr::n_distinct(dipnet_data[, c("Site.Name", "Wetland.ID..")])` wetlands were sampled. Within those wetlands, a total of 6 species of amphibians were found. Below is a table with additional summary statistics for the dataset.
 
 ```{r, numeric summary stats}
 numeric_vars <- c(
@@ -81,7 +81,7 @@ ggplot(cat_summary, aes(x = Category, y = Count, fill = Variable)) +
   labs(
     title = "Categorical Summary Counts",
     x = "Category",
-    y = "Count"
+    y = "Wetland Count"
   ) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -114,7 +114,7 @@ ggplot(tadpole_summary, aes(x = Wetland.Type.clean, y = total_tadpoles)) +
   )
 ```
 
-##### This graph shows that borrow pit wetlands on the landward side of the levee and natural wetlands on the riverward side of the levee had the highest counts of tadpoles present. All of our wetlands connected to agriculutral lands via drainage ditches had low counts of tadpoles as we suspected. Let's dig a little deeper into our top two wetland types.
+##### This graph shows that borrow pit wetlands on the landward side of the levee and natural wetlands on the riverward side of the levee had the highest counts of tadpoles present. All of our wetlands connected to agriculutral lands via drainage ditches had low counts of tadpoles as we may have suspected. Let's dig a little deeper into our top two wetland types.
 
 ```{r, top two}
 selected_types <- c("Borrow Pit Landward", "Natural Wetland Riverward")
@@ -244,7 +244,7 @@ ggplot() +
   )
 ```
 
-##### As we start to tease out the relationship of predatory fish and tadpoles, visualizing where they occur helps start to see that the highest counts of tadpoles seem to correspond with lower counts of fish and vice versa. This will be an important area to tease apart in future analysis.
+##### As we start to tease out the relationship of predatory fish and tadpoles, visualizing where they occur helps start to see that the highest counts of tadpoles seem to correspond with lower counts of fish and vice versa. This will be an important area to investigate in future analysis.
 
 # Key Takeaways
 - Man-made wetlands can serve as high quality habitat for amphibians but at times lack diversity
@@ -254,4 +254,4 @@ ggplot() +
 
 # Next steps
 - Continue to look at the relationship of predators within the wetlands including fish and aquatic macroinvertebrates
-- Add in additional important abiotic variables like hydroperiod, wetland size, and proximity to agriculute
+- Add in additional important abiotic variables like hydroperiod, wetland size, and proximity to agriculture
