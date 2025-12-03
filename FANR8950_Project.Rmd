@@ -2,7 +2,9 @@
 title: "FANR8950_Project"
 author: "Aurora Fowler"
 date: "2025-11-25"
-output: html_document
+output: 
+  html_document:
+    toc: true
 ---
 ```{r, libraries, include=FALSE}
 library(tidyverse)
@@ -10,6 +12,8 @@ library(ggplot2)
 library(dplyr)
 library(stringr)
 library(kableExtra)
+library(maps)
+library(purrr)
 ```
 
 # Introduction
@@ -24,9 +28,13 @@ library(kableExtra)
 
 ```{r}
 dipnet_data <- read.csv("C:/Users/ajf66050/Documents/Research/Data/Field Data/Raw Data/Raw Data 9.16.csv")
+
+dipnet_data <- dipnet_data %>%
+  mutate(Wetland.Type.clean = str_replace_all(Wetland.Type, "_|-|,", " "),
+         Wetland.Type.clean = str_squish(Wetland.Type.clean))
 ```
 
-##### The dataset contains `r ncol(dipnet_data)` variables. A total of `r dplyr::n_distinct(dipnet_data[, c("Site.Name", "Wetland.ID..")])` wetlands were sampled. Within those wetlands, a total of `r dplyr::n_distinct(dipnet_data$Tadpoles.Present)` species were found. Below is a table with additional summary statistics for the dataset.
+##### The dataset contains `r ncol(dipnet_data)` variables. A total of `r dplyr::n_distinct(dipnet_data[, c("Site.Name", "Wetland.ID..")])` wetlands were sampled. Within those wetlands, a total of 6 species were found. Below is a table with additional summary statistics for the dataset.
 
 ```{r, numeric summary stats}
 numeric_vars <- c(
@@ -52,19 +60,198 @@ numeric_summary %>%
 ```
 
 ```{r, categorical summary stats}
-cat_summary <- dipnet_data %>%
-  distinct(Wetland.ID.., Site.Name, Wetland.Type) %>%
-  group_by(Site.Name, Wetland.Type) %>%
-  summarise(Num_Wetlands = n(), .groups = "drop")
+cat_vars <- c("Site.Name", "Wetland.Type.clean")
 
-cat_summary <- cat_summary %>%
-  mutate(Wetland.Type = str_replace_all(Wetland.Type, "_|-|,", " "),
-    Wetland.Type = str_squish(Wetland.Type),
-    Wetland.Type = str_replace_all(Wetland.Type, " ", "\n"))
+cat_summary_list <- list()
 
+for (var in cat_vars) {
+  
+  freq_table <- table(dipnet_data[[var]])
+    freq_df <- as.data.frame(freq_table)
+  names(freq_df) <- c(var, "Count")
+    colnames(freq_df) <- c("Category", "Count")
+    cat_summary_list[[var]] <- freq_df
+}
 
-cat_summary %>%
-  kbl(caption = "Categorical Variable Summary") %>%
-  kable_classic(full_width = TRUE)
+cat_summary <- bind_rows(cat_summary_list, .id = "Variable")
+
+ggplot(cat_summary, aes(x = Category, y = Count, fill = Variable)) +
+  geom_col(show.legend = FALSE) +       
+  facet_wrap(~Variable, scales = "free_x") + 
+  labs(
+    title = "Categorical Summary Counts",
+    x = "Category",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
+
+# Data Visualization
+
+##### Now that we have summarized some of the data let's look a little closer at some of the relationships within our dataset.
+
+##### First, let's look at the distribution of total tadpole counts across our different wetland types.
+```{r, data visual 1}
+tadpole_summary <- dipnet_data %>%
+  group_by(Wetland.ID.., Site.Name, Wetland.Type.clean) %>%
+  summarize(total_tadpoles = sum(Total_Tadpoles, na.rm = TRUE),
+            n_samples = n()) %>%
+   rename(Wetland.ID = Wetland.ID..) %>%
+mutate(Wetland.ID = str_replace(Wetland.ID, "[a-zA-Z]$", ""))
+
+ggplot(tadpole_summary, aes(x = Wetland.Type.clean, y = total_tadpoles)) +
+  geom_col(fill = "steelblue") +  
+  labs(
+    title = "Total Tadpoles by Wetland Type",
+    x = "Wetland Type",
+    y = "Total Tadpoles"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)  
+  )
+```
+
+##### This graph shows that borrow pit wetlands on the landward side of the levee and natural wetlands on the riverward side of the levee had the highest counts of tadpoles present. All of our wetlands connected to agriculutral lands via drainage ditches had low counts of tadpoles as we suspected. Let's dig a little deeper into our top two wetland types.
+
+```{r, top two}
+selected_types <- c("Borrow Pit Landward", "Natural Wetland Riverward")
+
+tadpole_plot_data <- dipnet_data %>%
+  filter(Wetland.Type.clean %in% selected_types)
+
+tadpole_long <- tadpole_plot_data %>%
+  pivot_longer(
+    cols = c(Toad_Tadpoles, Blanchards_Cricket_Frog, Copes_Gray_Treefrog,
+             Boreal_Chorus_Frog, Leopard_Frog, American_Bullfrog),
+    names_to = "Species",
+    values_to = "Count"
+  )
+
+ggplot(tadpole_long, aes(x = Species, y = Count, fill = Wetland.Type.clean)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Tadpoles by Species in Selected Wetland Types",
+    x = "Species",
+    y = "Number of Tadpoles",
+    fill = "Wetland Type"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+##### Now we can see that toad tadpoles seem to be dominating in these wetlands which helps us understand that while these wetlands are obviously good habitat for one species, they don't contain the diversity of amphibians we would like. Now, let's look specifically at the invasive species in this region, the American Bullfrog.
+
+```{r, bullfrog}
+nested_data <- dipnet_data %>%
+  group_by(Wetland.Type.clean) %>%
+  nest()
+
+nested_data <- nested_data %>%
+  mutate(American_Bullfrog = purrr::map(data, ~ select(.x, Site.Name, American_Bullfrog)))
+
+bullfrog_data <- nested_data %>%
+  select(Wetland.Type.clean, American_Bullfrog) %>%
+  unnest(American_Bullfrog)
+
+ggplot(bullfrog_data, aes(x = Wetland.Type.clean, y = American_Bullfrog, fill = Site.Name)) +
+  geom_col() +
+  labs(
+    title = "American Bullfrog Tadpoles per Wetland Type",
+    x = "Wetland Type",
+    y = "Count of American Bullfrog Tadpoles",
+    fill = "Site"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+##### Some interetsing trends arise in this graph. We see that bullfrogs were most numerous in natural wetlands on the landward side and agriculutarlly connected systems. We can hypothesize that these may be ecologically degraded systems due to their connection or proximity to pesticides and herbcides. Making them ideal for more tolerant invader species. As we start to think about the abiotic variables that drive these dynamics, let's investigate an important one, wetland slope.
+
+
+```{r, slope}
+avg_slope <- read.csv("C:/Users/ajf66050/Documents/Research/Data/Field Data/Raw Data/Average Slopes per Wetland.csv")
+
+tadpole_summary$Wetland.ID <- as.integer(tadpole_summary$Wetland.ID)
+
+slope_tadpoles <- tadpole_summary %>%
+  left_join(avg_slope, by = c("Wetland.ID", "Site.Name"))
+```
+
+##### The slope of a wetland plays an important role for amphibians. Tadpoles are often found in the shallow or littoral zone of wetlands where they can escape predators. Let's look and see if there seems to be a relationship between the slope of the wetlands and the total tadpoles found in them. 
+
+```{r}
+ggplot(slope_tadpoles, aes(x = Average.Slope, y = total_tadpoles)) +
+  geom_point(color = "steelblue", size = 3) +
+  geom_smooth(method = "glm", se = TRUE, color = "darkred") +  
+  labs(
+    title = "Total Tadpoles vs Average Wetland Slope",
+    x = "Average Slope",
+    y = "Total Tadpoles"
+  ) +
+  theme_minimal()
+```
+
+##### This graph helps us visualize the relationship between tadpole abundance and wetland slope. As we hypothesized, wetlands with a shallower slope have a higher count of tadpoles. Our final visualization will look at the influence sunfish/panfish predators have on amphibian distribution within our geographical study area. Fish data was collected via minnow traps set in wetlands where dipnet survyes occurred and left for 24 hours.
+
+```{r}
+fish_data <- read.csv("C:/Users/ajf66050/Documents/Research/Data/Field Data/Raw Data/Raw Fish Data 9.22.csv")
+
+fish_long <- fish_data %>%
+  select(Site.Name, Wetland.Type,Date.Deployed,
+         Orange_spotted_sunfish:River_carpsucker, x, y, Plains_Spadefoot:American_Bullfrog) %>%
+  pivot_longer(cols = c(Orange_spotted_sunfish:River_carpsucker),
+               names_to = "fish_species", values_to = "fish_counts") %>%
+  mutate(counts = if_else(is.na(fish_counts), 0, fish_counts),
+         Wetland.Type.clean = str_replace_all(Wetland.Type, "_|-|,", " "),
+         Wetland.Type.clean = str_squish(Wetland.Type.clean),
+         Wetland.Type.clean = str_replace_all(Wetland.Type.clean, " ", "\n"))
+```
+
+```{r, figures-side, fig.show="hold", out.width="50%"}
+usa <- map_data("state")
+
+ggplot() +
+  geom_polygon(data = usa, aes(x = long, y = lat, group = group),
+               fill = "gray90", color = "white") +
+  geom_point(data = dipnet_data, aes(x = x, y = y, size = Total_Tadpoles),
+             color = "red", alpha = 0.7) +
+  scale_size_continuous(range = c(3, 10)) +
+  coord_cartesian(xlim = c(-97, -95), ylim = c(40, 42)) +
+  theme_minimal() +
+  labs(
+    title = "Coordinate Points with Tadpole Count",
+    x = "Longitude",
+    y = "Latitude",
+    size = "Count"
+  )
+
+ggplot() +
+  geom_polygon(data = usa, aes(x = long, y = lat, group = group),
+               fill = "gray90", color = "white") +
+  geom_point(data = fish_long, aes(x = x, y = y, size = fish_counts),
+             color = "red", alpha = 0.7) +
+  scale_size_continuous(range = c(3, 10)) +
+  coord_cartesian(xlim = c(-97, -95), ylim = c(40, 42)) +
+  theme_minimal() +
+  labs(
+    title = "Coordinate Points with Fish Count",
+    x = "Longitude",
+    y = "Latitude",
+    size = "Count"
+  )
+```
+
+##### As we start to tease out the relationship of predatory fish and tadpoles, visualizing where they occur helps start to see that the highest counts of tadpoles seem to correspond with lower counts of fish and vice versa. This will be an important area to tease apart in future analysis.
+
+# Key Takeaways
+- Man-made wetlands can serve as high quality habitat for amphibians but at times lack diversity
+- Wetlands with close proximity or permanent connection to agricultural lands have lower abundance of amphibians and tadpoles present are often more tolerant invasive species
+- Abiotic factors like wetland slope play an important role in shaping the tadpole communities in wetlands and should be considered when planning and designing man-made wetlands
+- Presence of predatory fish may lower abundance of tadpoles
+
+# Next steps
+- Continue to look at the relationship of predators within the wetlands including fish and aquatic macroinvertebrates
+- Add in additional important abiotic variables like hydroperiod, wetland size, and proximity to agriculute
