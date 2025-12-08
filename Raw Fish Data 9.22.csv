@@ -1,0 +1,93 @@
+﻿Site Name,Wetland Type,Wetland ID,Date Deployed,Time Deployed,Date Retrieved,Time Retrieved,Tadpoles Present,Plains_Spadefoot,Toad,Blanchard_Cricket_Frog,Treefrog,Boreal_Chorus_Frog,Western_Narrow-mouthed_Toad,Leopard_Frog,American_Bullfrog,Other Tadpoles Species and Count,Were fish captured?,Orange_spotted_sunfish,Minnow,Bluegill,Green_sunfish,Mosquitofish,Red_shiner,Longear_sunfish,Shortnosed_gar,River_carpsucker,Were other species captured?,What species and count,Depth (m),x,y
+Corning Bend,Natural_Wetland_-_Riverward,,5/19/2025 16:00,13:49,5/20/2025 16:00,10:45,None,,,,,,,,,,No,,,,,,,,,,No,,,-95.516168,40.261722
+Aspinwall Bend,Natural_Wetland_-_Riverward,,5/20/2025 16:00,13:20,5/21/2025 16:00,12:10,None,,,,,,,,,,Yes,1,,,,,,,,,No,,0.19,-95.635906,40.319928
+Aspinwall Bend,Natural_Wetland_-_Riverward,,5/20/2025 16:00,13:23,5/21/2025 16:00,11:59,None,,,,,,,,,,Yes,1,2,,,,,,,,Yes,Palaemonidae - 9,0.17,-95.636457,40.319745
+Aspinwall Bend,Natural_Wetland_-_Riverward,,5/20/2025 16:00,13:26,5/21/2025 16:00,11:56,None,,,,,,,,,,No,,,,,,,,,,Yes,Palaemonidae - 7,0.16,-95.636312,40.319965
+Corning Bend,Borrow_Pit_-_Landward,,5/21/2025 16:00,14:21,5/22/2025 16:00,10:51,None,,,,,,,,,,No,,,,,,,,,,No,,0.16,-95.501646,40.266975
+Corning Bend,Borrow_Pit_-_Landward,,5/21/2025 16:00,14:24,5/22/2025 16:00,10:46,None,,,,,,,,,,No,,,,,,,,,,No,,0.16,-95.501173,40.266851
+Corning Bend,Borrow_Pit_-_Landward,,5/21/2025 16:00,14:30,5/22/2025 16:00,9:14,None,,,,,,,,,,Yes,,,1,,,,,,,No,,0.14,-95.501421,40.266402
+Corning Bend,Borrow_Pit_-_Landward,,5/21/2025 16:00,14:33,5/22/2025 16:00,9:47,None,,,,,,,,,,Yes,,,,1,1,,,,,No,,0.15,-95.500617,40.266374
+Corning Bend,Borrow_Pit_-_Landward,,5/21/2025 16:00,2:40,5/22/2025 16:00,11:52,None,,,,,,,,,,No,,,,,,,,,,No,,0.15,-95.50093,40.267238
+Corning Bend,Natural_Wetland_-_Riverward,,5/21/2025 16:00,15:01,5/22/2025 16:00,13:21,None,,,,,,,,,,No,,,,,,,,,,No,,0.14,-95.500416,40.258412
+Corning Bend,Natural_Wetland_-_Riverward,,5/21/2025 16:00,15:06,5/22/2025 16:00,13:24,None,,,,,,,,,,No,,,,,,,,,,Yes,Crayfish - 1,0.16,-95.500082,40.258385
+Corning Bend,Natural_Wetland_-_Riverward,,5/21/2025 16:00,15:12,5/22/2025 16:00,13:44,None,,,,,,,,,,No,,,,,,,,,,No,,0.12,-95.499442,40.25818
+Nishnabotna,Natural_Wetland_-_Riverward,,5/27/2025 16:00,11:32,5/28/2025 16:00,8:36,None,,,,,,,,,,Yes,5,,,,,,,,,No,,0.2,-95.66175,40.456106
+Nishnabotna,Natural_Wetland_-_Riverward,,5/27/2025 16:00,11:40,5/28/2025 16:00,9:13,None,,,,,,,,,,Yes,1,,,1,,,,,,Yes,Shrimp - 4,0.15,-95.662443,40.45648
+Nishnabotna,Natural_Wetland_-_Riverward,,5/27/2025 16:00,11:48,5/28/2025 16:00,9:45,None,,,,,,,,,,Yes,1,,,1,,,,,,No,,0.16,-95.665322,40.456825
+Nishnabotna,Natural_Wetland_-_Riverward,,5/27/2025 16:00,12:00,5/28/2025 16:00,10:24,None,,,,,,,,,,Yes,2,,,,,,,,,No,,0.17,-95.662665,40.454983
+Nishnabotna,Natural_Wetland_-_Riverward,,5/27/2025 16:00,12:08,5/28/2025 16:00,10:39,None,,,,,,,,,,No,,,,,,,,,,Yes,Shrimp - 3,0.14,-95.660825,40.455487
+Nishnabotna,Natural_Wetland_-_Landward,,5/27/2025 16:00,14:20,5/28/2025 16:00,12:43,None,,,,,,,,,,Yes,,,,4,,,,,,No,,0.26,-95.657067,40.454391
+Nishnabotna,Natural_Wetland_-_Landward,,5/27/2025 16:00,14:25,5/28/2025 16:00,12:09,None,,,,,,,,,,No,,,,,,,,,,Yes,"Shrimp - 3
+Water scorpion - 1",0.22,-95.657388,40.454884
+Nishnabotna,Natural_Wetland_-_Landward,,5/27/2025 16:00,14:29,5/28/2025 16:00,12:51,None,,,,,,,,,,No,,,,,,,,,,Yes,Shrimp - 1,0.16,-95.65674,40.455575
+Nishnabotna,"Natural_Wetland_-_Landward,Ag_Connected",,5/28/2025 16:00,11:16,5/29/2025 16:00,10:04,None,,,,,,,,,,Yes,10,,,,,,,,,No,,0.18,-95.65895,40.456552
+Nishnabotna,"Natural_Wetland_-_Landward,Ag_Connected",,5/28/2025 16:00,11:20,5/29/2025 16:00,10:01,None,,,,,,,,,,Yes,8,,,,,,,,,No,,0.18,-95.658443,40.456098
+Nishnabotna,"Natural_Wetland_-_Landward,Ag_Connected",,5/28/2025 16:00,11:25,5/29/2025 16:00,9:58,None,,,,,,,,,,No,,,,,,,,,,Yes,Shrimp - 2,0.17,-95.657088,40.456174
+Nishnabotna,"Natural_Wetland_-_Landward,Ag_Connected",,5/28/2025 16:00,11:29,5/29/2025 16:00,9:53,None,,,,,,,,,,Yes,7,,,,,,,,,Yes,Shrimp - 1,0.22,-95.656896,40.456752
+Nishnabotna,Ag_Connected,,5/28/2025 16:00,11:34,5/29/2025 16:00,9:47,None,,,,,,,,,,Yes,4,,,10,,,,,,No,,0.15,-95.656768,40.457117
+Nishnabotna,Natural_Wetland_-_Riverward,,5/28/2025 16:00,13:50,5/29/2025 16:00,11:20,None,,,,,,,,,,Yes,1,,,,,,,,,Yes,Shrimp - 1,0.28,-95.652028,40.437576
+Nishnabotna,Natural_Wetland_-_Riverward,,5/28/2025 16:00,13:57,5/29/2025 16:00,11:16,None,,,,,,,,,,Yes,,,1,,,4,,,,No,,0.2,-95.652599,40.43742
+Nishnabotna,Natural_Wetland_-_Riverward,,5/28/2025 16:00,14:02,5/29/2025 16:00,11:12,None,,,,,,,,,,Yes,30,,,,,,,,,No,,0.23,-95.652536,40.437107
+Nishnabotna,Natural_Wetland_-_Riverward,,5/28/2025 16:00,14:05,5/29/2025 16:00,11:05,None,,,,,,,,,,Yes,3,,,,,,,,,No,,0.15,-95.65221,40.436967
+Nishnabotna,Natural_Wetland_-_Landward,,5/28/2025 16:00,14:34,5/29/2025 16:00,13:35,None,,,,,,,,,,Yes,15,1,,,,1,,,,No,,0.14,-95.647986,40.422687
+Nishnabotna,Natural_Wetland_-_Landward,,5/28/2025 16:00,14:39,5/29/2025 16:00,1:33,None,,,,,,,,,,Yes,2,,,,,,,,,No,,0.19,-995.647398,40.422688
+Nishnabotna,Natural_Wetland_-_Landward,,5/28/2025 16:00,14:46,5/29/2025 16:00,13:30,American_Bullfrog,,,,,,,,1,,Yes,1,,,,,,,,,Yes,Shrimp - 5,0.14,-95.646761,40.422888
+Nishnabotna,Natural_Wetland_-_Landward,,5/28/2025 16:00,14:53,5/29/2025 16:00,13:27,American_Bullfrog,,,,,,,,1,,Yes,2,,,,,,,,,No,,0.16,-95.646836,40.423241
+Nishnabotna,Natural_Wetland_-_Landward,,5/28/2025 16:00,14:57,5/29/2025 16:00,13:25,None,,,,,,,,,,Yes,6,,,,,,,,,No,,0.16,-95.647761,40.423372
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,8:28,6/4/2025 16:00,10:53,None,,,,,,,,,,No,,,,,,,,,,No,,0.27,-95.83263,40.685092
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,8:33,6/4/2025 16:00,11:13,None,,,,,,,,,,No,,,,,,,,,,No,,0.21,-95.832847,40.686106
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,8:38,6/4/2025 16:00,11:50,American_Bullfrog,,,,,,,,1,,No,,,,,,,,,,No,,0.17,-95.83165,40.686514
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,8:45,6/4/2025 16:00,12:07,None,,,,,,,,,,No,,,,,,,,,,Yes,Bellastomadid - 1,0.17,-95.831342,40.68534
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,8:49,6/4/2025 16:00,12:25,None,,,,,,,,,,No,,,,,,,,,,No,,0.18,-95.83128,40.684506
+Copeland Bend,Ag_Connected,,6/3/2025 16:00,9:04,6/4/2025 16:00,8:29,None,,,,,,,,,,No,,,,,,,,,,Yes,mayfly larvae - 1,0.15,-95.833248,40.682007
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,9:13,6/4/2025 16:00,9:14,None,,,,,,,,,,No,,,,,,,,,,Yes,Dragonfly larvae,0.18,-95.832035,40.683859
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,9:17,6/4/2025 16:00,9:45,None,,,,,,,,,,No,,,,,,,,,,Yes,Fringed diving beetle,0.22,-95.831085,40.683987
+Copeland Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/3/2025 16:00,9:27,6/4/2025 16:00,10:22,None,,,,,,,,,,No,,,,,,,,,,Yes,Dragonfly larvae - 1,0.24,-95.830671,40.683575
+Copeland Bend,Ag_Connected,,6/3/2025 16:00,9:40,6/4/2025 16:00,8:33,None,,,,,,,,,,No,,,,,,,,,,No,,0.19,-95.833165,40.681945
+Copeland Bend,Natural_Wetland_-_Riverward,,6/3/2025 16:00,9:56,6/4/2025 16:00,13:57,None,,,,,,,,,,No,,,,,,,,,,No,,0.15,-95.837026,40.681877
+Copeland Bend,Natural_Wetland_-_Riverward,,6/3/2025 16:00,10:00,6/4/2025 16:00,14:13,None,,,,,,,,,,No,,,,,,,,,,No,,0.16,-95.836747,40.681558
+Copeland Bend,Natural_Wetland_-_Riverward,,6/3/2025 16:00,10:03,6/4/2025 16:00,14:21,None,,,,,,,,,,No,,,,,,,,,,No,,0.13,-95.836705,40.681849
+Copeland Bend,Ag_Connected,,6/4/2025 16:00,13:24,6/5/2025 16:00,10:50,None,,,,,,,,,,No,,,,,,,,,,Yes,Giant water scavenger beetle - 1,0.27,-95.834092,40.681197
+Copeland Bend,"Borrow_Pit_-_Riverward,Ag_Connected",,6/4/2025 16:00,13:33,6/5/2025 16:00,9:28,None,,,,,,,,,,No,,,,,,,,,,No,,0.19,-95.835023,40.680138
+Copeland Bend,"Borrow_Pit_-_Riverward,Ag_Connected",,6/4/2025 16:00,13:38,6/5/2025 16:00,9:44,None,,,,,,,,,,No,,,,,,,,,,No,,0.16,-95.834657,40.679499
+Copeland Bend,"Borrow_Pit_-_Riverward,Ag_Connected",,6/4/2025 16:00,1:42,6/5/2025 16:00,9:58,None,,,,,,,,,,No,,,,,,,,,,No,,0.24,-95.835066,40.679809
+MU Payne,Natural_Wetland_-_Riverward,,6/10/2025 16:00,13:39,6/11/2025 16:00,12:04,None,,,,,,,,,,Yes,2,,,,,,,,,No,,0.17,-95.775521,40.659433
+MU Payne,Natural_Wetland_-_Riverward,,6/10/2025 16:00,13:42,6/11/2025 16:00,12:01,None,,,,,,,,,,Yes,2,,,,,,4,,,No,,0.2,-95.775732,40.65964
+MU Payne,Natural_Wetland_-_Riverward,,6/10/2025 16:00,13:46,6/11/2025 16:00,11:58,None,,,,,,,,,,No,,,,,,,,,,Yes,Shrimp - 2,0.19,-95.775253,40.659839
+Copeland Bend,Borrow_Pit_-_Riverward,,6/11/2025 16:00,13:07,6/12/2025 16:00,12:06,Leopard_Frog_(Plains_and_Northe,,,,,,,4,,,No,,,,,,,,,,No,,0.16,-95.842806,40.687995
+Copeland Bend,Borrow_Pit_-_Riverward,,6/11/2025 16:00,13:11,6/12/2025 16:00,12:08,None,,,,,,,,,,No,,,,,,,,,,No,,0.32,-95.842865,40.68824
+Copeland Bend,Borrow_Pit_-_Riverward,,6/11/2025 16:00,13:17,6/12/2025 16:00,11:13,None,,,,,,,,,,No,,,,,,,,,,No,,0.13,-95.843605,40.688461
+Copeland Bend,Borrow_Pit_-_Riverward,,6/11/2025 16:00,13:20,6/12/2025 16:00,11:12,None,,,,,,,,,,No,,,,,,,,,,No,,0.19,-95.843604,40.688535
+MU Payne,Borrow_Pit_-_Riverward,,6/12/2025 16:00,8:03,6/13/2025 16:00,8:25,None,,,,,,,,,,No,,,,,,,,,,No,,0.15,-95.75252598,40.63989876
+MU Payne,Borrow_Pit_-_Riverward,,6/12/2025 16:00,8:06,6/13/2025 16:00,8:27,None,,,,,,,,,,No,,,,,,,,,,No,,0.2,-95.752855,40.640105
+MU Payne,Borrow_Pit_-_Riverward,,6/12/2025 16:00,8:10,6/13/2025 16:00,8:29,None,,,,,,,,,,No,,,,,,,,,,No,,0.22,-95.752914,40.639679
+MU Payne,Borrow_Pit_-_Riverward,,6/12/2025 16:00,8:12,6/13/2025 16:00,8:31,None,,,,,,,,,,No,,,,,,,,,,Yes,"Dragonfly larvae - 1
+Fringed diving beetle - 1",0.17,-95.752611,40.639433
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,10:07,6/18/2025 16:00,15:14,Leopard_Frog_(Plains_and_Northe,,,,,,,13,,,No,,,,,,,,,,Yes,"Crayfish - 2
+Dragonfly larvae - 1",0.12,-96.030176,41.545866
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,10:12,6/18/2025 16:00,15:11,Leopard_Frog_(Plains_and_Northe,,,,,,,5,,,No,,,,,,,,,,Yes,Crayfish - 2,0.16,-96.030949,41.545883
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,10:16,6/18/2025 16:00,15:07,None,,,,,,,,,,No,,,,,,,,,,Yes,"Adult northern leopard frogs - 3
+Crayfish - 2
+Dragonfly larvae - 1",0.15,-96.031461,41.545898
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,10:41,6/18/2025 16:00,10:53,None,,,,,,,,,,No,,,,,,,,,,No,,0.21,-96.035137,41.5427
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,10:18,6/18/2025 16:00,9:50,American_Bullfrog,,,,,,,,7,,No,,,,,,,,,,Yes,Crayfish - 1,0.21,-96.035767,41.543265
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,10:58,6/18/2025 16:00,10:46,American_Bullfrog,,,,,,,,1,,No,,,,,,,,,,No,,0.17,-96.035467,41.542545
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,11:09,6/18/2025 16:00,11:42,None,,,,,,,,,,No,,,,,,,,,,No,,0.17,-96.03481,41.542844
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,11:11,6/18/2025 16:00,11:54,None,,,,,,,,,,No,,,,,,,,,,No,,0.21,-96.034789,41.543128
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,11:15,6/18/2025 16:00,12:02,None,,,,,,,,,,No,,,,,,,,,,No,,0.15,-96.0346,41.543357
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,11:30,6/19/2025 16:00,8:49,None,,,,,,,,,,Yes,,,,,,,1,,,No,,0.23,-96.04579,41.520002
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,11:35,6/19/2025 16:00,9:07,None,,,,,,,,,,Yes,,,,1,,,,,,No,,0.17,-96.045565,41.520279
+De Soto Bend,Natural_Wetland_-_Landward,,6/17/2025 16:00,11:38,6/19/2025 16:00,9:20,None,,,,,,,,,,No,,,,,,,,,,No,,0.18,-96.045862,41.520277
+Soldier Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/24/2025 16:00,10:18,6/25/2025 16:00,8:59,American_Bullfrog,,,,,,,,1,,No,,,,,,,,,,No,,0.26,-96.093164,41.703743
+Soldier Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/24/2025 16:00,10:22,6/25/2025 16:00,9:16,American_Bullfrog,,,,,,,,1,,Yes,,,,,,,,1,,No,,0.28,-96.093442,41.703809
+Soldier Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/24/2025 16:00,10:27,6/25/2025 16:00,9:38,American_Bullfrog,,,,,,,,1,,No,,,,,,,,,,No,,0.37,-96.093064,41.704017
+Soldier Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/24/2025 16:00,10:32,6/25/2025 16:00,9:45,American_Bullfrog,,,,,,,,4,,Yes,,,,,,,,,1,No,,0.2,-96.093161,41.704329
+Soldier Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/24/2025 16:00,10:35,6/25/2025 16:00,9:56,None,,,,,,,,,,Yes,,,,,,,,1,,No,,0.22,-96.093469,41.704125
+Soldier Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/24/2025 16:00,11:01,6/25/2025 16:00,11:55,None,,,,,,,,,,No,,,,,,,,,,No,,0.23,-96.08867,41.697487
+Soldier Bend,"Borrow_Pit_-_Landward,Ag_Connected",,6/24/2025 16:00,11:05,6/25/2025 16:00,11:16,None,,,,,,,,,,Yes,1,,,,,,1,,,No,,0.2,-96.089339,41.6975
+Soldier Bend,Borrow_Pit_-_Landward,,6/24/2025 16:00,11:12,6/25/2025 16:00,11:30,None,,,,,,,,,,Yes,,,2,3,,1,,,,No,,0.16,-96.091014,41.697725
+Soldier Bend,Borrow_Pit_-_Landward,,6/24/2025 16:00,11:15,6/25/2025 16:00,11:17,None,,,,,,,,,,No,,,,,,,,,,No,,0.17,-96.090974,41.698085
+Soldier Bend,Borrow_Pit_-_Landward,,6/24/2025 16:00,11:18,6/25/2025 16:00,11:02,None,,,,,,,,,,Yes,,,,4,,,,,,No,,0.21,-96.091162,41.698505
+Soldier Bend,Borrow_Pit_-_Landward,,6/24/2025 16:00,11:22,6/25/2025 16:00,10:47,None,,,,,,,,,,Yes,,,,,,21,,,,No,,0.28,-96.091974,41.698691
+Soldier Bend,Borrow_Pit_-_Landward,,6/24/2025 16:00,11:26,6/25/2025 16:00,10:33,None,,,,,,,,,,Yes,,,2,,,,,,,No,,0.19,-96.092335,41.698295
+Soldier Bend,Borrow_Pit_-_Landward,,6/24/2025 16:00,11:29,6/25/2025 16:00,10:24,None,,,,,,,,,,Yes,,,1,,,,,,,No,,0.17,-96.092462,41.697925
